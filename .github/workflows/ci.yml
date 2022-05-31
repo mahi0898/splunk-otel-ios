@@ -4,7 +4,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: macOS-latest
     steps:
-      - run: cd SplunkRumWorkspace/SmokeTest
+      - filename: "SmokeTest.xcodeproj"
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
