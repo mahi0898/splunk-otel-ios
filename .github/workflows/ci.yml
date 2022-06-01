@@ -1,7 +1,7 @@
 name: Continuous Integration
 on:
   push:
-    branches: [main]
+    branches: [Feature-APMI-1779-multiple-ios-versions]
   pull_request:
 
 jobs:
