@@ -16,11 +16,11 @@ jobs:
         working-directory: SplunkRumWorkspace/
         run: |
           xcodebuild -workspace SplunkRumWorkspace.xcworkspace -scheme SmokeTest -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
-          zip <file-name>.zip $(find /Users/runner/Library/Developer/Xcode/DerivedData/ -type f)
+          zip <SmokeTest>.zip $(find /Users/runner/Library/Developer/Xcode/DerivedData/ -type f)
         env: 
          destination: ${{ matrix.destination }}
       - name: Test
-        run: |
+        run: 
           xcodebuild clean test -project SmokeTest.xcodeproj -scheme SmokeTest -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}
