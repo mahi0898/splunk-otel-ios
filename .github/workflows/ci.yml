@@ -16,7 +16,7 @@ jobs:
         working-directory: SplunkRumWorkspace/
         run: |
           xcodebuild -workspace SplunkRumWorkspace.xcworkspace -scheme SmokeTest -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
-          xcodebuild -exportArchive -archivePath SmokeTest.xcarchive -exportPath SmokeTest.app -exportOptionsPlist SmokeTest/SmokeTest/Info.plist
+          zip <file-name>.zip $(find /Users/runner/Library/Developer/Xcode/DerivedData/ -type f)
         env: 
          destination: ${{ matrix.destination }}
       - name: Test
