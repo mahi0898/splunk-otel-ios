@@ -17,7 +17,7 @@ jobs:
         run: |
           xcodebuild -workspace SplunkRumWorkspace.xcworkspace -scheme SmokeTest -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
           echo "******"
-          find -c /Users/runner/Library/Developer/Xcode/DerivedData/ -type f -name '*app'
+          find  /Users/runner/Library/Developer/Xcode/DerivedData/ -type f -name '*app'
            echo "******"
           zip SmokeTest.zip $(find /Users/runner/Library/Developer/Xcode/DerivedData/ -type f -name '*app')
         env: 
