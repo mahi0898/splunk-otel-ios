@@ -1,25 +1,22 @@
 name: CI-Test
 
 on: [push]
-
 jobs:
-  test:
-    name: Test
-    runs-on: macos-latest
-    strategy:
-        matrix:
-          destination: ['platform=iOS Simulator,OS=15.2,name=iPhone 11 Pro']
+  full-build:
+    runs-on: macOS-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@Feature-APMI-1779-multiple-ios-versions
-      - name: Build
-        working-directory: SplunkRumWorkspace/
+        uses: actions/checkout@v1
+      - name: Full Build
         run: |
-          xcodebuild -workspace SplunkRumWorkspace.xcworkspace -scheme SmokeTest CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          ./fullbuild.sh
           zip SmokeTest.zip $(find  /Users/runner/Library/Developer/Xcode/DerivedData/SplunkRumWorkspace-dzmkiduinguystddyqrorblmaahj/Build/Products/Debug-iphonesimulator/SmokeTest.app -type f)
+      - name: Smoke Test
+        run: ./smoketest.sh
       - name: uploading zip
         uses: actions/upload-artifact@v3
         with:
           name: SmokeTest
           path: SmokeTest.zip
+
         
