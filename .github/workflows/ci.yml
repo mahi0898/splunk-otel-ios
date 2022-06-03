@@ -17,7 +17,11 @@ jobs:
         run: |
           xcodebuild -workspace SplunkRumWorkspace.xcworkspace -scheme SmokeTest -destination "platform=iOS Simulator,OS=15.2,name=iPhone 11 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
           zip SmokeTest.zip $(find /Users/runner/Library/Developer/Xcode/DerivedData/SplunkRumWorkspace-dzmkiduinguystddyqrorblmaahj/Build/Products/Debug-iphonesimulator/SmokeTest.app -type f)
-          ls
+      - name: uploading zip
+        uses: actions/upload-artifact@v3
+        with:
+          name: SmokeTest
+          path: SmokeTest.zip
         env: 
          destination: ${{ matrix.destination }}
       - name: Test
