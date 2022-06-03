@@ -15,13 +15,13 @@ jobs:
       - name: Build
         working-directory: SplunkRumWorkspace/
         run: |
-          xcodebuild -workspace SplunkRumWorkspace.xcworkspace -scheme SmokeTest -destination "['platform=iOS Simulator,OS=15.2,name=iPhone 11 Pro']" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          xcodebuild -workspace SplunkRumWorkspace.xcworkspace -scheme SmokeTest -destination "platform=iOS Simulator,OS=15.2,name=iPhone 11 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
           zip SmokeTest.zip $(find /Users/runner/Library/Developer/Xcode/DerivedData/SplunkRumWorkspace-dzmkiduinguystddyqrorblmaahj/Build/Products/Debug-iphonesimulator/SmokeTest.app -type f)
           ls
         env: 
          destination: ${{ matrix.destination }}
       - name: Test
         run: |
-          xcodebuild clean test -project SmokeTest.xcodeproj -scheme SmokeTest -destination "['platform=iOS Simulator,OS=15.2,name=iPhone 11 Pro']" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+          xcodebuild clean test -project SmokeTest.xcodeproj -scheme SmokeTest -destination "platform=iOS Simulator,OS=15.2,name=iPhone 11 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         env: 
          destination: ${{ matrix.destination }}
