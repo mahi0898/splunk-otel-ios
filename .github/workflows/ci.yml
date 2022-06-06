@@ -21,11 +21,6 @@ jobs:
           pwd
           echo ${GITHUB_WORKSPACE}
         env: 
-           destination: ${{ matrix.destination }}
-      - name: Test
-        run: |
-          xcodebuild clean test -project SmokeTest.xcodeproj -scheme SmokeTest -destination "platform=iOS Simulator,OS=15.2,name=iPhone 11 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
-        env: 
          destination: ${{ matrix.destination }}
       - name: uploading zip
         uses: actions/upload-artifact@v3
