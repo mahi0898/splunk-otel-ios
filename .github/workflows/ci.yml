@@ -1,30 +1,21 @@
 name: CI-Test
 
 on: [push]
-env:
-  SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
-  SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
-
 jobs:
-  test:
-    name: Test
-    runs-on: macos-latest
-    strategy:
-        matrix:
-          destination: ['platform=iOS Simulator,OS=15.2,name=iPhone 11 Pro']
+  full-build:
+    runs-on: macOS-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Build
-        working-directory: SplunkRumWorkspace/
+      - name: Full Build
         run: |
-          xcodebuild -workspace SplunkRumWorkspace.xcworkspace -scheme SmokeTest -destination "platform=iOS Simulator,OS=15.2,name=iPhone 11 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO > /dev/null
+          ./fullbuild.sh
           zip ${GITHUB_WORKSPACE}/SmokeTest.zip $(find /Users/runner/Library/Developer/Xcode/DerivedData/SplunkRumWorkspace-dzmkiduinguystddyqrorblmaahj/Build/Products/Debug-iphonesimulator/SmokeTest.app -type f)
           ls /Users/runner/work/splunk-otel-ios/splunk-otel-ios
           pwd
           echo ${GITHUB_WORKSPACE}
-        env: 
-         destination: ${{ matrix.destination }}
+      - name: Smoke Test
+        run: ./smoketest.sh
       - name: uploading zip
         uses: actions/upload-artifact@v3
         with:
