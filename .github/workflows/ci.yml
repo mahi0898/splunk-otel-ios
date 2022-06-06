@@ -21,11 +21,6 @@ jobs:
           pwd
           echo ${GITHUB_WORKSPACE}
         env: 
-           destination: ${{ matrix.destination }}
-      - name: Test
-        run: |
-         xcodebuild -workspace SplunkRumWorkspace/SplunkRumWorkspace.xcworkspace -scheme SmokeTest -configuration Debug test -destination platform="iOS Simulator,id="platform=iOS Simulator,OS=15.2,name=iPhone 11 Pro""
-        env: 
          destination: ${{ matrix.destination }}
       - name: uploading zip
         uses: actions/upload-artifact@v3
