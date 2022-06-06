@@ -14,8 +14,6 @@ jobs:
           ls /Users/runner/work/splunk-otel-ios/splunk-otel-ios
           pwd
           echo ${GITHUB_WORKSPACE}
-      - name: Smoke Test
-        run: ./smoketest.sh
       - name: uploading zip
         uses: actions/upload-artifact@v3
         with:
