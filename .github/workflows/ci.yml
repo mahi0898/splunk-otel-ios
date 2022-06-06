@@ -31,4 +31,6 @@ jobs:
           name: SmokeTest
           path: /Users/runner/work/splunk-otel-ios/splunk-otel-ios/SmokeTest.zip
       - name: Uploading app on sauce lab
-           $ curl -u sso-splunk.saucelabs.com-mahimag:274c9a94-86d1-4b12-9594-57307cfb2c57 -X POST "http://saucelabs.com/rest/v1/storage/sso-splunk.saucelabs.com-mahimag/SmokeTest.zip?overwrite=true" -H "Content-Type: application/octet-stream" --data-binary @/Users/runner/work/splunk-otel-ios/splunk-otel-ios/SmokeTest.zip
+        run: 
+           cd /Users/runner/work/splunk-otel-ios/splunk-otel-ios
+          $ curl -u sso-splunk.saucelabs.com-mahimag:274c9a94-86d1-4b12-9594-57307cfb2c57 -X POST "http://saucelabs.com/rest/v1/storage/sso-splunk.saucelabs.com-mahimag/SmokeTest.zip?overwrite=true" -H "Content-Type: application/octet-stream" --data-binary @/Users/runner/work/splunk-otel-ios/splunk-otel-ios/SmokeTest.zip
