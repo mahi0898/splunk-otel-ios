@@ -33,5 +33,5 @@ jobs:
       - name: Uploading app on sauce lab
         run: 
            cd /Users/runner/work/splunk-otel-ios/splunk-otel-ios
-           $ curl -u $SAUCE_USERNAME:$SAUCE_ACCESS_KEY -X POST -H "Content-Type:application/octet-stream" \
-           "https://saucelabs.com/rest/v1/storage/$SAUCE_USERNAME/SmokeTest?overwrite=true" --data-binary @SmokeTest.zip
+           $ curl -u sso-splunk.saucelabs.com-mahimag:274c9a94-86d1-4b12-9594-57307cfb2c57 -X POST -H "Content-Type:application/octet-stream" \
+           "https://saucelabs.com/rest/v1/storage/sso-splunk.saucelabs.com-mahimag/SmokeTest?overwrite=true" --data-binary @/Users/runner/work/splunk-otel-ios/splunk-otel-ios/SmokeTest.zip
