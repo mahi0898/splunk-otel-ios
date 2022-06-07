@@ -35,7 +35,8 @@ jobs:
         with:
           python-version: 3.8 #install the python needed
       - name: execute py script # run the run.py to get the latest data
-        working-directory: PasswordEncryption
+        working-directory: SplunkRumWorkspace
         run: |
+            cd SmokeTest/
             python3 -m pip install Appium-Python-Client
             python3 test_appium.py
