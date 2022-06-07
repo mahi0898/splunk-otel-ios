@@ -30,3 +30,12 @@ jobs:
              --form 'payload=@"SmokeTest.zip"' \
              --form 'name="SmokeTest.zip"' \
              --form 'description="iOS Test App v3"'
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 #install the python needed
+      - name: execute py script # run the run.py to get the latest data
+        working-directory: PasswordEncryption
+        run: |
+            python3 -m pip install Appium-Python-Client
+            python3 test_appium.py
