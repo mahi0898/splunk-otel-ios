@@ -12,7 +12,7 @@ jobs:
       - name: Smoke Test
         run: | 
           ./smoketest.sh 
-          zip ${GITHUB_WORKSPACE}/SmokeTest.zip $(find /Users/runner/Library/Developer/Xcode/DerivedData/SplunkRumWorkspace/Build/Products/SplunkRumWorkspace-iphonesimulator/SmokeTest.app -type f)
+          zip ${GITHUB_WORKSPACE}/SmokeTest.zip $(find /Users/runner/Library/Developer/Xcode/DerivedData/SplunkRumWorkspace-dzmkiduinguystddyqrorblmaahj/Build/Products/Debug-iphonesimulator/SmokeTest.app -type f)
           ls /Users/runner/work/splunk-otel-ios/splunk-otel-ios
           pwd
           echo ${GITHUB_WORKSPACE}
