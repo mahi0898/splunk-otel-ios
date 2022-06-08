@@ -10,9 +10,13 @@ jobs:
       - name: Full Build
         run: ./fullbuild.sh
       - name: Smoke Test
-        run:  ./smoketest.sh 
+        run: | 
+         ./smoketest.sh 
       - name: uploading zip
-        run:  ./upload artifact.sh
+        uses: actions/upload-artifact@v3
+        with:
+          name: SmokeTest
+          path: /Users/runner/work/splunk-otel-ios/splunk-otel-ios/SmokeTest.zip
       - name: Uploading app on sauce lab
         run: |
            cd /Users/runner/work/splunk-otel-ios/splunk-otel-ios/
