@@ -1,4 +1,6 @@
-- name: uploading zip
+set -e
+set -x
+  - name: uploading zip
         uses: actions/upload-artifact@v3
         with:
           name: SmokeTest
