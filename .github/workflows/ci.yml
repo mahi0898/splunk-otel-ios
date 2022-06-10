@@ -6,14 +6,11 @@ env:
 jobs:
   full-build:
     runs-on: macOS-latest
-    strategy:
-        matrix:
-          destination: ['platform=iOS Simulator,OS=15.2,name=iPhone 11 Pro']
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      #- name: Full Build
-       # run: ./fullbuild.sh
+      - name: Full Build
+        run: ./fullbuild.sh
       - name: Smoke Test
         run: | 
          ./smoketest.sh 
@@ -30,7 +27,7 @@ jobs:
              --request POST 'https://api.us-west-1.saucelabs.com/v1/storage/upload' \
              --form 'payload=@"SmokeTest.zip"' \
              --form 'name="SmokeTest.zip"' \
-             --form 'description="iOS Test App v3"'
+             --form 'description="iOS Test App"'
       - name: setup python
         uses: actions/setup-python@v2
         with:
