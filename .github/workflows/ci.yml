@@ -1,4 +1,4 @@
-name: CI-Test
+name: My first manual workflow
 
 on: [push, workflow_dispatch]
 env:
