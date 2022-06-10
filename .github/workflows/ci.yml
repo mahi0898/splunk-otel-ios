@@ -1,6 +1,7 @@
 name: My first manual workflow
 
-on: [push, workflow_dispatch]
+on: 
+    workflow_dispatch
 env:
   SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
   SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
