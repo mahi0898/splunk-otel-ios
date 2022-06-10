@@ -1,7 +1,9 @@
-name: My first manual workflow
-
+name: CI-Test
 on: 
-    workflow_dispatch
+  workflow_dispatch:
+  push:
+     branches:
+        - Feature-APMI-1779-multiple-ios-versions
 env:
   SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
   SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
