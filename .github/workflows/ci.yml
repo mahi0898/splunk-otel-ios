@@ -9,7 +9,9 @@ jobs:
     runs-on: macOS-latest
     strategy:
         matrix:
-          destination: ['platform=iOS Simulator,OS=15.2,name=iPhone 11 Pro']
+          include:
+          - ios: "15.2"
+    name: test iOS (${{ matrix.ios }})
     steps:
       - name: Checkout
         uses: actions/checkout@v1
