@@ -3,7 +3,7 @@ on: [push]
 env:
   SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
   SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
-  resourceGroup: ${GITHUB_RUN_ID}${GITHUB_RUN_NUMBER}
+  resourceGroup: ${GITHUB_RUN_NUMBER}
 jobs:
   full-build:
     runs-on: macOS-latest
