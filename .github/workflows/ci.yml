@@ -27,7 +27,7 @@ jobs:
              --request POST 'https://api.us-west-1.saucelabs.com/v1/storage/upload' \
              --form 'payload=@"SmokeTest.zip"' \
              --form 'name="SmokeTest.zip"' \
-             --form 'description="(https://github.com/:user/:repo/runs/:runId)"'
+             --form 'description= echo ${GITHUB_RUN_ID}'
       - name: setup python
         uses: actions/setup-python@v2
         with:
