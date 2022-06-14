@@ -4,6 +4,7 @@ env:
   SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
   SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
   resourceGroup: ${GITHUB_RUN_NUMBER}
+  destination: ${{ matrix.destination }}
 jobs:
   full-build:
     runs-on: macOS-latest
