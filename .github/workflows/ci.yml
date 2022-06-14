@@ -10,7 +10,6 @@ jobs:
     strategy:
         matrix:
          os: ['14.5', '15.2']
-         device: ['iPhone 12 Pro Simulator']
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -42,4 +41,4 @@ jobs:
         run: |
             cd SmokeTest/
             python3 -m pip install Appium-Python-Client
-            python3 test_appium.py ${{ matrix.os }} ${{ matrix.device }}
+            python3 test_appium.py ${{ matrix.os }} 
