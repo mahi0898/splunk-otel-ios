@@ -25,7 +25,7 @@ class HybridIOSTests(unittest.TestCase):
         caps['platformName'] = 'iOS'
         caps['appium:app'] = 'storage:filename=SmokeTest.zip' # The filename of the mobile app
         caps['appium:deviceName'] = 'iPhone 12 Pro Simulator'
-        caps['appium:platformVersion'] = '15.2'
+        caps['appium:platformVersion'] = sys.argv[${{ matrix.destination }}]
         caps['sauce:options'] = {}
         caps['sauce:options']['appiumVersion'] = '1.22.3'
         caps['sauce:options']['build'] = 'Platform Configurator Build ' + currentDate
