@@ -9,9 +9,8 @@ jobs:
     runs-on: macOS-latest
     strategy:
         matrix:
-          destination: ['14.5', '15.2']
-    env:
-          destination: ${{ matrix.destination }}
+         os: ['14.5', '15.2']
+         device: ['iPhone 11 Pro Simulator', 'iPhone 12 Pro Simulator']
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -43,4 +42,4 @@ jobs:
         run: |
             cd SmokeTest/
             python3 -m pip install Appium-Python-Client
-            python3 test_appium.py ${{ matrix.destination }}
+            python3 test_appium.py ${{ matrix.os }} ${{ matrix.device }}
