@@ -9,7 +9,7 @@ jobs:
     runs-on: macOS-latest
     strategy:
         matrix:
-          destination: ['platform=iOS Simulator,OS=14.5,name=iPhone 12 Pro', 'platform=iOS Simulator,OS=15.2,name=iPhone 12 Pro']
+          destination: ['14.5', '15.2']
     env:
           destination: ${{ matrix.destination }}
     steps:
@@ -43,4 +43,4 @@ jobs:
         run: |
             cd SmokeTest/
             python3 -m pip install Appium-Python-Client
-            python3 test_appium.py
+            python3 test_appium.py $destination
