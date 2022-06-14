@@ -9,7 +9,7 @@ jobs:
     runs-on: macOS-latest
     strategy:
         matrix:
-          destination: ['platform=iOS Simulator,OS=14.5,name=iPhone SE (2nd generation) Simulator', 'platform=iOS Simulator,OS=15.2,name=iPhone 12 Pro']
+          destination: ['platform=iOS Simulator,OS=14.5,name=iPhone 12 Pro', 'platform=iOS Simulator,OS=15.2,name=iPhone 12 Pro']
     env:
           destination: ${{ matrix.destination }}
     steps:
