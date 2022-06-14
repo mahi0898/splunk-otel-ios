@@ -1,5 +1,3 @@
-###----------------------------APIs Covered----------------------------###
-#diableMemoryWarning, disableNetworkMonitoringWarning, isInitialized, getValueForKey, initWithCoder, setDelegate
 import unittest
 import os
 import sys
