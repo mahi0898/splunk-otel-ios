@@ -9,7 +9,7 @@ jobs:
     runs-on: macOS-latest
     strategy:
         matrix:
-         os: ['14.5', '15.2']
+         os: ['16.5', '15.9']
          device: ['iPhone 7 Simulator', 'iPhone 12 Pro Simulator']
     steps:
       - name: Checkout
