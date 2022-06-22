@@ -47,8 +47,8 @@ class HybridIOSTests(unittest.TestCase):
         self.driver.find_element_by_id("CLICK ME")
         try:
             self.click()
-    except NoSuchElementException:
-    print("exception handled")
+        except NoSuchElementException:
+               print("exception handled")
         #AssertionError: True is not false : testvalue is not false
 
 if __name__ == "__main__":
