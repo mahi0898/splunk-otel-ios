@@ -45,7 +45,7 @@ class HybridIOSTests(unittest.TestCase):
     #Click on Configure disableMemoryWarning and Test disableMemoryWarning
     def test_API_DisableMemoryWarning(self):
         try:
-    self.click()
+            self.click()
     except NoSuchElementException:
     print("exception handled")
         #AssertionError: True is not false : testvalue is not false
