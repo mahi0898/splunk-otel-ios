@@ -44,10 +44,9 @@ class HybridIOSTests(unittest.TestCase):
             
     #Click on Configure disableMemoryWarning and Test disableMemoryWarning
     def test_API_DisableMemoryWarning(self):
-        if
-        self.driver.find_element_by_id("SCREEN")
+        if(self.driver.find_element_by_id("SCREEN")):  
         self.click()
-        else
+        else:
         AssertionError : Test Case failed
         #AssertionError: True is not false : testvalue is not false
 
