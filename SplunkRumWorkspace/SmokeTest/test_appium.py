@@ -8,7 +8,7 @@ import subprocess
 import json
 from random import choice, randint
 from datetime import datetime
-
+from unittest import TestLoader, TextTestRunner
 #from selenium.webdriver.common.touch_actions import TouchActions
 
 class HybridIOSTests(unittest.TestCase):
@@ -49,3 +49,12 @@ class HybridIOSTests(unittest.TestCase):
 if __name__ == "__main__":
     suite = unittest.TestLoader().loadTestsFromTestCase(HybridIOSTests)
     unittest.TextTestRunner(verbosity=2).run(suite)
+    loader = TestLoader()
+    tests = loader.discover('.')
+    testRunner = TextTestRunner()
+    test_results = testRunner.run(tests)
+
+    if test_results.wasSuccessful(): 
+        exit(0)
+    else:
+        exit(1)
