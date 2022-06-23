@@ -45,4 +45,7 @@ jobs:
             python3 test_appium.py ${{ matrix.os }} "${{ matrix.device }}" 
       - name: Pass or fail
         run: |
-          If [[  ${{ test_appium.py}} == 'true' ]];  then exit 0; else exit 1; fi
+          If: test_appium.py == 'true';  then exit 0
+          else 
+          exit 1 
+          fi
