@@ -43,9 +43,9 @@ jobs:
             cd SmokeTest/
             python3 -m pip install Appium-Python-Client
             python3 test_appium.py ${{ matrix.os }} "${{ matrix.device }}" 
-      - name: Pass or fail
-        run: |
-          If: test_appium.py == 'true';  then exit 0
-          else 
-          exit 1 
-          fi
+            If: test_appium.py == 'true' 
+            run: exit 0
+            else
+            run: exit 1
+            fi
+          
