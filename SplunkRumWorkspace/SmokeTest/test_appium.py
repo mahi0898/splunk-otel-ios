@@ -45,13 +45,12 @@ class HybridIOSTests(unittest.TestCase):
     #Click on Configure disableMemoryWarning and Test disableMemoryWarning
     def test_API_DisableMemoryWarning(self):
         self.driver.find_element_by_id("CLICK ME").click();
-        exit(1)
 
 if __name__ == "__main__":
     suite = unittest.TestLoader().loadTestsFromTestCase(HybridIOSTests)
     unittest.TextTestRunner(verbosity=2).run(suite)
     
-    if test_results.wasSuccessful(): 
+    if unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful(): 
         exit(0)
     else:
         exit(1)
