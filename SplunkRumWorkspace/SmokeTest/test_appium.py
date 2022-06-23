@@ -47,7 +47,7 @@ class HybridIOSTests(unittest.TestCase):
 
 if __name__ == "__main__":
     suite = unittest.TestLoader().loadTestsFromTestCase(HybridIOSTests)
-     testRunner_result = unittest.TextTestRunner(verbosity=2).run(suite)
+    testRunner_result = unittest.TextTestRunner(verbosity=2).run(suite)
     
     if testRunner_result.wasSuccessful():
         print("Passed")
