@@ -50,7 +50,7 @@ if __name__ == "__main__":
     suite = unittest.TestLoader().loadTestsFromTestCase(HybridIOSTests)
     unittest.TextTestRunner(verbosity=2).run(suite)
     
-    if suite.wasSuccessful(): 
+    if suite.success(): 
         exit(0)
     else:
         exit(1)
