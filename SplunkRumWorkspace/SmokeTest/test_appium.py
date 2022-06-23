@@ -47,10 +47,12 @@ class HybridIOSTests(unittest.TestCase):
         self.driver.find_element_by_id("CLICK ME").click();
 
 if __name__ == "__main__":
-    suite = unittest.TestLoader().loadTestsFromTestCase(HybridIOSTests)
-    unittest.TextTestRunner(verbosity=2).run(suite)
-    
-    if test(result).success(): 
+    loader = TestLoader()
+    tests = loader.discover('.')
+    testRunner = TextTestRunner()
+    test_results = testRunner.run(tests)
+
+    if test_results.wasSuccessful(): 
         exit(0)
     else:
         exit(1)
