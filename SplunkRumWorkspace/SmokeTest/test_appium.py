@@ -9,7 +9,7 @@ import subprocess
 import json
 from random import choice, randint
 from datetime import datetime
-#from selenium.webdriver.common.touch_actions import TouchActions
+from selenium.webdriver.common.touch_actions import TouchActions
 
 class HybridIOSTests(unittest.TestCase):
 
