@@ -3,13 +3,14 @@ import os
 import sys
 from appium import webdriver
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from time import sleep
 import argparse
 import subprocess
 import json
 from random import choice, randint
 from datetime import datetime
-from selenium.webdriver.common.touch_actions import TouchActions
+#from selenium.webdriver.common.touch_actions import TouchActions
 
 class HybridIOSTests(unittest.TestCase):
 
@@ -44,7 +45,7 @@ class HybridIOSTests(unittest.TestCase):
             
     #Click on Configure disableMemoryWarning and Test disableMemoryWarning
     def test_API_DisableMemoryWarning(self):
-        self.driver.find_element_by_id("CLICK ME").click();
+        self.driver.find_element(By.ID, "CLICK ME").click();
 
 if __name__ == "__main__":
     suite = unittest.TestLoader().loadTestsFromTestCase(HybridIOSTests)
