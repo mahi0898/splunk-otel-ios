@@ -44,7 +44,7 @@ jobs:
             python3 -m pip install Appium-Python-Client
             python3 test_appium.py ${{ matrix.os }} "${{ matrix.device }}"
       - name: Send mail
-        uses: mahi0898/splunk-otel-ios@v1
+        uses: mahi0898/splunk-otel-ios@v2
         with:
              server_address: smtp.gmail.com
              server_port: 465
