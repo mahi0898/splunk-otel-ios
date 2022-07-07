@@ -2,6 +2,7 @@ import unittest
 import os
 import sys
 from appium import webdriver
+from selenium import webdriver
 from time import sleep
 import argparse
 import subprocess
