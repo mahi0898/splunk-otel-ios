@@ -51,7 +51,7 @@ jobs:
              username: ${{ secrets.EMAIL_USERNAME }}
              password: ${{ secrets.EMAIL_PASSWORD }}
              subject: Github Actions job result
-             to: mahimag@splunk.com
-             from: mahima
+             to: piyushp@splunk.com
+             from: Mahima
              secure: true
              body: Build job of ${{github.repository}} completed successfully!
