@@ -9,8 +9,8 @@ jobs:
     runs-on: macOS-latest
     strategy:
         matrix:
-         os: ['15.0']
-         device: ['iPhone 7 Simulator']
+         os: ['']
+         device: ['']
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -43,15 +43,4 @@ jobs:
             cd SmokeTest/
             python3 -m pip install Appium-Python-Client
             python3 test_appium.py ${{ matrix.os }} "${{ matrix.device }}"
-      - name: Send mail
-        uses: actions/checkout@v2
-        with:
-             server_address: smtp.gmail.com
-             server_port: 465
-             username: ${{ secrets.EMAIL_USERNAME }}
-             password: ${{ secrets.EMAIL_PASSWORD }}
-             subject: Github Actions job result
-             to: piyushp@splunk.com
-             from: Mahima
-             secure: true
-             body: Build job of ${{github.repository}} completed successfully!
+     
